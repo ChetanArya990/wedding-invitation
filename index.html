@@ -511,6 +511,21 @@
     .venue-info{ text-align:left; }
     .map-embed{ height:280px; }
   }
+
+  /* ---------- Music Toggle ---------- */
+  #musicToggle{
+    position:fixed; bottom:20px; right:20px; z-index:500;
+    width:48px; height:48px; border-radius:50%;
+    background:var(--maroon); color:var(--gold-bright);
+    border:1px solid rgba(233,196,104,0.5);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem; cursor:pointer;
+    box-shadow:0 2px 10px rgba(0,0,0,0.3);
+    opacity:0; pointer-events:none; transition:opacity 0.6s ease;
+  }
+  #musicToggle.visible{ opacity:1; pointer-events:auto; }
+  #musicToggle.spinning{ animation: spin 4s linear infinite; }
+  @keyframes spin{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
 </style>
 </head>
 <body>
@@ -519,6 +534,9 @@
 <canvas id="starry-background"></canvas>
 
 <div id="petal-layer"></div>
+
+<audio id="bgMusic" src="dena_hoya.mp3" loop preload="auto"></audio>
+<button id="musicToggle" aria-label="Toggle music">🎵</button>
 
 <!-- MANDAP GATE INTRO (ENHANCED FRONT PAGE) -->
 <div id="gate">
@@ -849,10 +867,43 @@
     setTimeout(()=> gate.classList.add('hidden'), 1500);
     dropPetals();
     initScratchCard();
+    playMusic();
   }
   
   document.body.style.overflow = 'hidden';
   enterBtn.addEventListener('click', openGate);
+
+  /* ---------- Background Music ---------- */
+  const bgMusic = document.getElementById('bgMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  let musicPlaying = false;
+
+  function playMusic(){
+    bgMusic.volume = 0.6;
+    bgMusic.play().then(()=>{
+      musicPlaying = true;
+      musicToggle.textContent = '🎵';
+      musicToggle.classList.add('spinning');
+    }).catch(()=>{
+      // Autoplay blocked by the browser; guest can start it via the toggle button
+      musicPlaying = false;
+    });
+    musicToggle.classList.add('visible');
+  }
+
+  musicToggle.addEventListener('click', ()=>{
+    if(musicPlaying){
+      bgMusic.pause();
+      musicPlaying = false;
+      musicToggle.textContent = '🔇';
+      musicToggle.classList.remove('spinning');
+    } else {
+      bgMusic.play();
+      musicPlaying = true;
+      musicToggle.textContent = '🎵';
+      musicToggle.classList.add('spinning');
+    }
+  });
 
   /* ---------- Petal Drop ---------- */
   function dropPetals(count){
