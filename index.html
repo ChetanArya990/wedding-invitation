@@ -491,6 +491,29 @@
   .map-embed{ width:100%; height:260px; border:0; }
   .map-embed-wrap{ overflow:hidden; border:1px solid rgba(199,154,61,0.5); border-radius: 4px; }
 
+
+  /* ---------- Family Lineage ---------- */
+  #family-details{
+    background:
+      radial-gradient(circle at 8% 10%, rgba(199,154,61,0.12), transparent 35%),
+      var(--ivory-soft);
+    text-align:center;
+  }
+  .family-lineage{
+    max-width:780px; margin:0 auto;
+    padding:2rem clamp(1rem,4vw,2.5rem);
+    background:rgba(251,243,227,0.82);
+    border-top:1px solid rgba(199,154,61,0.65);
+    border-bottom:1px solid rgba(199,154,61,0.65);
+    box-shadow:0 8px 22px rgba(74,12,24,0.05);
+    position:relative;
+  }
+  .family-lineage::before{content:"✦  ❦  ✦"; display:block; color:var(--gold); font-size:1.15rem; margin-bottom:1.1rem;}
+  .lineage-couple{font-family:'Yatra One',cursive; font-size:clamp(1.35rem,3.6vw,1.85rem); color:var(--maroon-deep); margin-bottom:0.5rem;}
+  .lineage-text{font-size:1.08rem; line-height:1.8; color:var(--ink);}
+  .lineage-text strong{color:var(--maroon); font-weight:600;}
+  .lineage-separator{width:55px; height:1px; background:var(--gold); opacity:0.75; margin:1.4rem auto;}
+
   /* ---------- Blessing / Footer ---------- */
   #blessing{ text-align:center; background:var(--maroon-deep); color:var(--ivory-soft); padding: 4rem 1.2rem; }
   #blessing .glyph{ font-size:2rem; color:var(--gold-bright); margin-bottom:1rem; display: block; }
@@ -682,6 +705,27 @@
     <div class="frame">
       <p>With hearts full of joy and gratitude, we invite you to be part of the celebrations as our families come together in union — through the colours of Haldi, the artistry of Mehandi, the blessings of Ganesh Puja, and the joyous procession of the Baraat.</p>
       <p class="families">The Arya Family &nbsp;·&nbsp; The Kaushik Family</p>
+    </div>
+  </section>
+
+
+  <section id="family-details">
+    <div class="sec-eyebrow utility">With the Blessings of Our Families</div>
+    <h2 class="sec-title">Chetan &amp; Dolly</h2>
+    <p class="sec-sub">With love and blessings from the families who made us who we are.</p>
+
+    <div class="family-lineage">
+      <div class="lineage-couple">Chetan Arya</div>
+      <p class="lineage-text">
+        <strong>Grandson of</strong> Late Mr. Hari Ram &amp; Mrs. Hemanti Devi<br>
+        <strong>Son of</strong> Mr. Kanta Prasad &amp; Smt. Pushpa Devi
+      </p>
+      <div class="lineage-separator"></div>
+      <div class="lineage-couple">Dolly Kaushik</div>
+      <p class="lineage-text">
+        <strong>Granddaughter of</strong> Late Mr. Kubiram Sharma &amp; Late Mrs. Ramkatori Sharma<br>
+        <strong>Daughter of</strong> Late Mr. Narayan Lal Sharma &amp; Mrs. Aradhana Sharma
+      </p>
     </div>
   </section>
 
