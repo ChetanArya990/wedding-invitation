@@ -146,7 +146,9 @@
     position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
     z-index:5; text-align:center; color:var(--gold-bright);
     transition:opacity .6s ease; width:min(92%, 520px);
-    max-height:calc(100vh - 54px); overflow-y:auto;
+    /* Keep the complete welcome card visible; never create an inner scroll area. */
+    max-height:none;
+    overflow:visible;
     background:
       radial-gradient(ellipse at 50% 25%, rgba(199,154,61,.12), transparent 58%),
       linear-gradient(155deg, rgba(110,20,35,.98), rgba(50,8,18,.98));
@@ -616,6 +618,31 @@
     .bottom-diyas-bar{justify-content:space-around;}
   }
 
+  /* Compact the welcome card on short screens so the shloka and both diyas remain visible. */
+  @media(max-height:620px){
+    #gate-center{
+      width:min(94%,520px);
+      padding:.55rem .85rem .85rem;
+      transform:translate(-50%,-50%) scale(.82);
+    }
+    .gate-header-tag{font-size:.78rem;margin-bottom:.15rem;}
+    .gate-symbols{gap:.8rem;margin-bottom:.1rem;}
+    .gate-symbols .swastik{font-size:1.35rem;}
+    .gate-symbols .om{font-size:2.15rem;}
+    .gate-ganesh-wrap{width:clamp(88px,17vh,118px);height:clamp(88px,17vh,118px);margin:.05rem auto .25rem;}
+    .gate-shloka{font-size:.76rem;line-height:1.35;margin-bottom:.55rem;}
+    #gate-center .display{font-size:clamp(1.55rem,4.5vw,2.2rem);margin-bottom:.05rem;}
+    #gate-center .subtag{font-size:.62rem;margin-bottom:.7rem;}
+    #gate-center button{padding:.65rem 1.7rem;font-size:.68rem;}
+    .card-diya{bottom:-12px;}
+  }
+  @media(max-height:480px){
+    #gate-center{transform:translate(-50%,-50%) scale(.70);}
+    .gate-ganesh-wrap{width:100px;height:100px;}
+    .gate-shloka{margin-bottom:.35rem;}
+    #gate-center .subtag{margin-bottom:.45rem;}
+  }
+
   @media(min-width:768px){
     section { padding: 6.5rem 2rem; }
     .venue-card{ grid-template-columns: 1fr 1.1fr; align-items:center; text-align:left; padding: 2.4rem; }
@@ -658,6 +685,23 @@
     font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
     color:var(--maroon);opacity:.8;
   }
+
+  /* ---------- Downloadable Wedding Poster ---------- */
+  #poster-download{
+    background:linear-gradient(180deg,#4A0C18 0%,#260710 100%);
+    color:var(--ivory-soft);text-align:center;padding:3.5rem 1.2rem;
+  }
+  #poster-download .sec-title{color:var(--gold-bright);}
+  #poster-download p{max-width:540px;margin:.5rem auto 1.5rem;font-size:1.08rem;line-height:1.6;}
+  .poster-download-link{
+    display:inline-flex;align-items:center;justify-content:center;gap:.65rem;
+    padding:.95rem 1.5rem;border:1px solid var(--gold-bright);border-radius:6px;
+    background:linear-gradient(135deg,rgba(233,196,104,.2),rgba(110,20,35,.45));
+    color:var(--gold-bright);text-decoration:none;font-family:'Poppins',sans-serif;
+    font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+    box-shadow:0 5px 18px rgba(0,0,0,.2);transition:transform .25s ease,background .25s ease;
+  }
+  .poster-download-link:hover{transform:translateY(-2px);background:rgba(233,196,104,.2);}
 
   /* ---------- Music Toggle ---------- */
   #musicToggle{
@@ -1000,6 +1044,17 @@
         <circle cx="40" cy="20" r="3" fill="#E9C468" opacity="0.5"/>
         <circle cx="80" cy="20" r="3" fill="#E9C468" opacity="0.5"/>
       </svg>
+    </div>
+  </section>
+
+  <section id="poster-download" aria-labelledby="poster-download-title">
+    <div class="poster-download-wrap">
+      <div class="sec-eyebrow utility">Keep a copy</div>
+      <h2 class="sec-title" id="poster-download-title">Wedding Invitation Poster</h2>
+      <p>Save our wedding invitation poster to your device and share it with your family and friends.</p>
+      <a class="poster-download-link" href="poster.jpg" download="Chetan-Dolly-Wedding-Invitation.jpg">
+        <span aria-hidden="true">⬇</span> Download Invitation Poster
+      </a>
     </div>
   </section>
 
