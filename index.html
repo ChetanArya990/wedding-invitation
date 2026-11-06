@@ -78,14 +78,14 @@
     isolation:isolate;
     overflow:hidden;
     background:
-      radial-gradient(ellipse at 50% 42%, rgba(126,75,171,.34), transparent 48%),
-      radial-gradient(ellipse at 50% 100%, rgba(112,63,147,.2), transparent 55%),
-      linear-gradient(145deg, #10051D 0%, #241039 48%, #10051D 100%);
+      radial-gradient(ellipse at 50% 42%, rgba(199,154,61,.18), transparent 48%),
+      radial-gradient(ellipse at 50% 100%, rgba(110,20,35,.28), transparent 55%),
+      linear-gradient(145deg, #260710 0%, #6E1423 48%, #260710 100%);
   }
   #gate::before{
     content:""; position:absolute; inset:12px; z-index:1; pointer-events:none;
     border:1px solid rgba(233,196,104,.58); border-radius:15px;
-    box-shadow:inset 0 0 0 5px rgba(233,196,104,.055), 0 0 28px rgba(184,133,255,.14);
+    box-shadow:inset 0 0 0 5px rgba(233,196,104,.055), 0 0 28px rgba(199,154,61,.12);
   }
   #gate::after{
     content:""; position:absolute; inset:22px; z-index:1; pointer-events:none;
@@ -94,9 +94,9 @@
   #gate .panel{
     flex:1;
     background:
-      radial-gradient(ellipse at 50% 50%, rgba(134,83,171,.2), transparent 58%),
+      radial-gradient(ellipse at 50% 50%, rgba(199,154,61,.12), transparent 58%),
       repeating-linear-gradient(45deg, transparent 0 18px, rgba(233,196,104,.025) 19px 20px),
-      linear-gradient(160deg, #32164B 0%, #1B0B2B 52%, #10051D 100%);
+      linear-gradient(160deg, #7A1B2A 0%, #4A0C18 52%, #260710 100%);
     position:relative; overflow:hidden;
     transition: transform 1.4s cubic-bezier(.76,0,.24,1);
     border-top:1px solid rgba(233,196,104,.42);
@@ -148,13 +148,13 @@
     transition:opacity .6s ease; width:min(92%, 520px);
     max-height:calc(100vh - 54px); overflow-y:auto;
     background:
-      radial-gradient(ellipse at 50% 25%, rgba(121,75,159,.25), transparent 58%),
-      linear-gradient(155deg, rgba(44,20,65,.97), rgba(18,7,29,.97));
+      radial-gradient(ellipse at 50% 25%, rgba(199,154,61,.12), transparent 58%),
+      linear-gradient(155deg, rgba(110,20,35,.98), rgba(50,8,18,.98));
     padding:clamp(1.05rem,3vh,2rem) clamp(1rem,4vw,2rem);
     border:1px solid rgba(233,196,104,.72);
     border-radius:16px;
     backdrop-filter:blur(10px);
-    box-shadow:0 18px 55px rgba(0,0,0,.65), inset 0 0 28px rgba(233,196,104,.11), 0 0 35px rgba(164,111,221,.18);
+    box-shadow:0 18px 55px rgba(0,0,0,.55), inset 0 0 28px rgba(233,196,104,.11), 0 0 35px rgba(110,20,35,.24);
   }
   #gate-center::before{
     content:""; position:absolute; inset:8px; border:1px solid rgba(233,196,104,.25);
@@ -166,7 +166,7 @@
   }
   .gate-ganesh-wrap::before{
     content:""; position:absolute; inset:2%; border-radius:50%;
-    background:radial-gradient(circle, rgba(255,210,126,.3), rgba(180,119,235,.12) 48%, transparent 72%);
+    background:radial-gradient(circle, rgba(255,210,126,.3), rgba(199,154,61,.10) 48%, transparent 72%);
     box-shadow:0 0 32px rgba(233,196,104,.25);
   }
   .gate-mandala{
@@ -224,7 +224,7 @@
   
   #gate-center button{
     position:relative; z-index:2;
-    background:linear-gradient(135deg, rgba(233,196,104,.16), rgba(111,67,145,.22));
+    background:linear-gradient(135deg, rgba(233,196,104,.18), rgba(74,12,24,.35));
     border:1px solid var(--gold-bright);
     color:var(--gold-bright);
     font-family:'Poppins',sans-serif;
@@ -237,7 +237,7 @@
     box-shadow: 0 0 10px rgba(233,196,104,0.3);
     border-radius: 4px;
   }
-  #gate-center button:hover{ background:var(--gold-bright); color:#1B0B2B; box-shadow:0 0 24px rgba(233,196,104,.9); transform:translateY(-2px); }
+  #gate-center button:hover{ background:var(--gold-bright); color:#4A0C18; box-shadow:0 0 24px rgba(233,196,104,.9); transform:translateY(-2px); }
   #gate.open #gate-center{ opacity:0; pointer-events:none; }
 
   /* Front Card Diyas */
@@ -623,6 +623,42 @@
     .map-embed{ height:280px; }
   }
 
+
+  /* ---------- RSVP / Coordination ---------- */
+  #rsvp{
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(199,154,61,.16), transparent 60%),
+      linear-gradient(180deg, #FBF3E3 0%, #F5E9D3 100%);
+    text-align:center;
+  }
+  .rsvp-wrap{max-width:760px;margin:0 auto;}
+  .rsvp-note{
+    max-width:580px;margin:0 auto 1.8rem;
+    font-size:1.12rem;line-height:1.7;color:var(--ink);opacity:.88;
+  }
+  .rsvp-contacts{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;
+  }
+  .rsvp-contact{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    min-width:210px;padding:.9rem 1.2rem;
+    border:1px solid var(--gold);border-radius:6px;
+    background:var(--maroon-deep);color:var(--gold-bright);
+    text-decoration:none;font-family:'Poppins',sans-serif;
+    font-size:.86rem;letter-spacing:.06em;
+    box-shadow:0 5px 16px rgba(74,12,24,.14);
+    transition:transform .25s ease,background .25s ease,box-shadow .25s ease;
+  }
+  .rsvp-contact:hover{
+    background:var(--maroon);transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(74,12,24,.22);
+  }
+  .rsvp-footnote{
+    margin-top:1.35rem;font-family:'Poppins',sans-serif;
+    font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--maroon);opacity:.8;
+  }
+
   /* ---------- Music Toggle ---------- */
   #musicToggle{
     position:fixed; bottom:20px; right:20px; z-index:500;
@@ -871,57 +907,6 @@
     <div class="scene-names">Chetan weds Dolly · Mehandi Evening</div>
   </section>
 
-  <section id="timeline">
-    <div class="sec-eyebrow utility">The Celebrations</div>
-    <h2 class="sec-title">Our Wedding Functions</h2>
-    <p class="sec-sub">Four ceremonies, two days — every ritual leading up to the union of Chetan weds Dolly.</p>
-
-    <div class="day-group">
-      <div class="day-label">
-        <span class="tag">Day One</span>
-        <span class="date">Saturday, 12th December</span>
-        <span class="rule"></span>
-      </div>
-      <div class="events">
-        <div class="event">
-          <div class="time">11:00 AM</div>
-          <div class="ename">Ganesh Puja</div>
-          <div class="edesc">The celebrations open with prayers to Lord Ganesha, seeking his blessings for an auspicious beginning.</div>
-        </div>
-        <div class="event">
-          <div class="time">12:00 PM</div>
-          <div class="ename">Haldi</div>
-          <div class="edesc">A joyful afternoon of turmeric, laughter and blessings at Late Shri Hari Ram Niwas.</div>
-        </div>
-        <div class="event">
-          <div class="time">8:00 PM</div>
-          <div class="ename">Mehandi</div>
-          <div class="edesc">An evening of music and intricate henna art, as the bride's hands are adorned ahead of the big day.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="day-group">
-      <div class="day-label">
-        <span class="tag">Day Two</span>
-        <span class="date">Sunday, 13th December</span>
-        <span class="rule"></span>
-      </div>
-      <div class="events">
-        <div class="event">
-          <div class="time">7:00 PM</div>
-          <div class="ename">Baraat Departure</div>
-          <div class="edesc">The Baraat departs from Late Shri Hari Ram Niwas, Sangam Vihar with dhol beats and brass band.</div>
-        </div>
-        <div class="event">
-          <div class="time">8:00 PM</div>
-          <div class="ename">Baraat Arrival &amp; Welcome</div>
-          <div class="edesc">The procession arrives at DDA Community Hall, Sriniwaspuri for the welcome and marriage rituals.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="baraat">
     <span class="glyph">🥁</span>
     <h3>Baraat Departure &amp; Welcome</h3>
@@ -985,6 +970,21 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section id="rsvp">
+    <div class="rsvp-wrap">
+      <div class="sec-eyebrow utility">RSVP · We would love to hear from you</div>
+      <h2 class="sec-title">For Any Coordination</h2>
+      <p class="rsvp-note">For any coordination, assistance or questions about the celebrations, please feel free to contact us on any of the numbers below. We will be happy to help.</p>
+      <div class="rsvp-contacts">
+        <a class="rsvp-contact" href="tel:+919555367286" aria-label="Call 9555367286">☎ &nbsp; 95553 67286</a>
+        <a class="rsvp-contact" href="tel:+919643740487" aria-label="Call 9643740487">☎ &nbsp; 96437 40487</a>
+        <a class="rsvp-contact" href="tel:+919873108323" aria-label="Call 9873108323">☎ &nbsp; 98731 08323</a>
+      </div>
+      <div class="rsvp-footnote">Your presence is our greatest gift</div>
     </div>
   </section>
 
